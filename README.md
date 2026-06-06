@@ -1,3 +1,5 @@
+# 先说明： tinyhttpd 个人笔记位于 note.md文档内
+
 # Computing-Network-Assignment18
 
 计算机网络课程作业 —— LNMP 环境下 HTTP 头部模拟实验。
@@ -24,3 +26,5 @@
 ## 观察方法
 
 用浏览器访问 `http://localhost:8080/xxx.php`，按 F12 打开开发者工具，在 Network / Application 标签中观察 HTTP 头部行为。
+
+
