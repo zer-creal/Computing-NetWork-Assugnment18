@@ -1,12 +1,6 @@
 <?php
-// (8) down.php - 控制浏览器内联显示或下载文件
-// ?type=inline   → Content-Disposition: inline（浏览器直接显示）
-// ?type=attachment → Content-Disposition: attachment（强制下载）
-// 不提供参数 → 默认 inline
-
 $type = isset($_GET['type']) ? $_GET['type'] : 'inline';
 
-// 生成动态文本内容
 $content = "========================================\n";
 $content .= "    绝密情报 - CONFIDENTIAL REPORT\n";
 $content .= "========================================\n\n";
@@ -21,21 +15,16 @@ $content .= "========================================\n";
 
 $filename = 'report.txt';
 
-// 设置 Content-Type
 header('Content-Type: text/plain; charset=utf-8');
 
 if ($type === 'attachment') {
-    // 强制下载模式
     header('Content-Disposition: attachment; filename="confidential.txt"');
     header('Content-Length: ' . strlen($content));
     echo $content;
     exit;
 } else {
-    // 内联显示模式（默认）
     header('Content-Disposition: inline; filename="report.txt"');
     header('Content-Length: ' . strlen($content));
-
-    // 输出 HTML 包装（非纯文本模式，方便在浏览器中查看）
     ?>
     <!DOCTYPE html>
     <html lang="zh-CN">

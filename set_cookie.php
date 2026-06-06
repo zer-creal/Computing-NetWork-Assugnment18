@@ -1,9 +1,5 @@
 <?php
-// (1) set_cookie.php - 设置会话级 Cookie（不设置过期时间）
-// 会话级 Cookie：浏览器关闭后自动删除
-
-setcookie('session_token', 'abc123'); // 不设置过期时间 = 会话级 Cookie
-
+setcookie('session_token', 'abc123');
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

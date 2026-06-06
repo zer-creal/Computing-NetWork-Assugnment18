@@ -1,9 +1,5 @@
 <?php
-// (3) method_test.php - 同时支持 GET、POST 和 PUT 请求
-// 通过 F12 或 curl 命令行检测不同请求方法
-
 $method = $_SERVER['REQUEST_METHOD'];
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

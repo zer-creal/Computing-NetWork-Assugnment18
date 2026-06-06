@@ -1,8 +1,6 @@
 <?php
-// (2) session_counter.php - 利用 PHP $_SESSION 实现访问计数器
 session_start();
 
-// 初始化或更新访问计数
 if (!isset($_SESSION['visit_count'])) {
     $_SESSION['visit_count'] = 1;
     $message = '欢迎首次来访！';
@@ -12,7 +10,6 @@ if (!isset($_SESSION['visit_count'])) {
     $message = "这是您第 {$_SESSION['visit_count']} 次访问，上次访问时间为 {$last_time}";
 }
 
-// 记录本次访问时间
 $_SESSION['last_visit'] = date('Y-m-d H:i:s');
 
 ?>

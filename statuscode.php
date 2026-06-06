@@ -1,7 +1,4 @@
 <?php
-// (7) statuscode.php - 生成不同的 HTTP 状态码
-// 通过 ?code=xxx 参数指定状态码
-
 $allowed_codes = [200, 204, 301, 302, 400, 403, 404, 500, 502, 503];
 $code = isset($_GET['code']) ? intval($_GET['code']) : 200;
 
@@ -9,7 +6,6 @@ if (!in_array($code, $allowed_codes)) {
     $code = 200;
 }
 
-// 状态码描述映射
 $descriptions = [
     200 => 'OK - 请求成功',
     204 => 'No Content - 成功但无响应体',
@@ -23,7 +19,6 @@ $descriptions = [
     503 => 'Service Unavailable - 服务不可用',
 ];
 
-// 特殊处理：301/302 重定向
 if ($code === 301) {
     header('Location: target.php', true, 301);
     exit;
@@ -33,14 +28,11 @@ if ($code === 302) {
     exit;
 }
 
-// 设置状态码
 http_response_code($code);
 
-// 204 不输出内容
 if ($code === 204) {
     exit;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

@@ -1,13 +1,9 @@
 <?php
-// (6) ua.php - 读取 User-Agent、Accept-Language、Accept-Encoding
-// 检测 UA 是否包含 curl
-
 $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '（无法获取 User-Agent）';
 $accept_language = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '（未提供）';
 $accept_encoding = isset($_SERVER['HTTP_ACCEPT_ENCODING']) ? $_SERVER['HTTP_ACCEPT_ENCODING'] : '（未提供）';
 
 $is_curl = (stripos($ua, 'curl') !== false);
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

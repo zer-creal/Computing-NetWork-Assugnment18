@@ -1,7 +1,5 @@
 <?php
-// (4) target.php - 重定向目标页面
 $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '（无 Referer — 可能是直接访问或 Referrer-Policy 被设为 no-referrer）';
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -33,7 +31,6 @@ $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '（无 
             <li>使用 HTTPS → HTTP 降级时浏览器默认不发送 Referer</li>
             <li>使用 <code>rel="noreferrer"</code> 属性在 <code>&lt;a&gt;</code> 标签中</li>
         </ol>
-        <p><strong>实验：</strong>取消 <code>redirect.php</code> 中 <code>header('Referrer-Policy: no-referrer')</code> 的注释，再观察 Referer 是否为空。</p>
     </div>
 </body>
 </html>

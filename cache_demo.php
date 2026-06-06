@@ -1,13 +1,9 @@
 <?php
-// (5) cache_demo.php - 浏览器缓存演示
-// 设置 Cache-Control: max-age=30，浏览器缓存 30 秒
-
 header('Cache-Control: max-age=30, public');
 header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 30) . ' GMT');
 
 $current_time = date('Y-m-d H:i:s');
 $timestamp = time();
-
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
